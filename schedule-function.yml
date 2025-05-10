@@ -11,5 +11,5 @@ jobs:
       - name: Call Supabase Edge Function
         run: |
           curl -X POST https://xonkffynwuqtggbqgbll.supabase.co/functions/v1/trigger-scheduled-tweets \
-            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhvbmtmZnlud3VxdGdnYnFnYmxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxMTk3OTQsImV4cCI6MjA1OTY5NTc5NH0.q709HhfjvwrlteOeUDwHfkvYBXM5Cylf0iCAul-uyJI"
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
 
