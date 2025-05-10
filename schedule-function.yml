@@ -1,0 +1,15 @@
+name: Trigger Supabase Function Every Minute
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+  workflow_dispatch: # Add this to enable manual runs
+
+jobs:
+  invoke_function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Supabase Edge Function
+        run: |
+          curl -X POST https://xonkffynwuqtggbqgbll.supabase.co/functions/v1/trigger-scheduled-tweets \
+          -H "Authorization: Bearer YOUR_SUPABASE_ANON_KEY"
